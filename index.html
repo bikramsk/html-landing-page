@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+ 
+
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/db-logo.webp" alt="logo">
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search for clinics by city or area">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="contact">
+                <a href="tel:9867546108" class="call-button">
+                    <i class="fas fa-phone icon-gap"></i> Call Now On 9867546108
+                </a>
+            </div>
+            <div class="hamburger" onclick="toggleMobileNav()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="mobile-nav" id="mobileNav">
+                <a href="#testimonials">Testimonials</a>
+                <a href="#book-consultation">Book Consultation</a>
+                <a href="#why-choose-dr-batra">Why Dr Batra's?</a>
+                <a href="#doctors-speak">Doctors Speak</a>
+            </div>
+        
+        </div>
+    </header>
+    
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="subtitle"><%= h1 %></h1>
+                <h2><%= h2 %></h2>
+                <p class="description"><%= desc %></p>
+                <a href="#" class="book-btn">BOOK YOUR APPOINTMENT</a>
+                <p class="offer">20% OFF ON HAIR TREATMENT</p>
+            </div>
+            <div class="hero-image">
+                <img src="images/image.webp" alt="Doctor">
+                <div class="badges">
+                    <div class="badge doctors">
+                        <span class="number">300+</span>
+                        <span class="text">Doctors Globally</span>
+                    </div>
+                    <div class="badge clinics">
+                        <span class="number">200+</span>
+                        <span class="text">Clinics Globally</span>
+                    </div>
+                    <div class="badge patients">
+                        <span class="number">150k+</span>
+                        <span class="text">Happy Patients</span>
+                    </div>
+                    <div class="badge success">
+                        <span class="number">91%</span>
+                        <span class="text">Success Rate</span>
+                    </div>
+                  
+                    <!-- Google Reviews Badge -->
+                    <div class="google-reviews">
+                        <div class="google-badge">
+                            <div class="google-logo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582L19.91 3C17.782 1.145 15.055 0 12 0 7.27 0 3.198 2.698 1.24 6.65l4.026 3.115Z"/>
+                                    <path fill="#34A853" d="M16.04 18.013c-1.09.703-2.474 1.078-4.04 1.078a7.077 7.077 0 0 1-6.723-4.823l-4.04 3.067A11.965 11.965 0 0 0 12 24c2.933 0 5.735-1.043 7.834-3l-3.793-2.987Z"/>
+                                    <path fill="#4285F4" d="M19.834 21c2.195-2.048 3.62-5.096 3.62-9 0-.71-.109-1.473-.272-2.182H12v4.637h6.436c-.317 1.559-1.17 2.766-2.395 3.558L19.834 21Z"/>
+                                    <path fill="#FBBC05" d="M5.277 14.268A7.12 7.12 0 0 1 4.909 12c0-.782.125-1.533.357-2.235L1.24 6.65A11.934 11.934 0 0 0 0 12c0 1.92.445 3.73 1.237 5.335l4.04-3.067Z"/>
+                                </svg>
+                            </div>
+                            <div class="rating-info">
+                                <div class="rating-top">
+                                    <div class="rating-number">4.6</div>
+                                    <div class="stars">★★★★<span class="half-star">★</span></div>
+                                </div>
+                                <div class="review-count">25,000+ reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                   
+               
+
+                   
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <img src="images/image-01.png" alt="Hair Growth Icon">
+                </div>
+                <div class="stat-content">
+                    <div class="stat-percentage">85%</div>
+                    <div class="stat-text">Hair Growth</div>
+                </div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <img src="images/image-01.png" alt="Hair Volume Icon">
+                </div>
+                <div class="stat-content">
+                    <div class="stat-percentage">88%</div>
+                    <div class="stat-text">Better hair volume</div>
+                </div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <img src="images/image-01.png" alt="Hair Thickness Icon">
+                </div>
+                <div class="stat-content">
+                    <div class="stat-percentage">86%</div>
+                    <div class="stat-text desktop-only">Hair thickness</div>
+                    <div class="stat-text mobile-only">Better hair volume</div>
+                </div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <img src="images/image-01.png" alt="Hair Fall Icon">
+                </div>
+                <div class="stat-content">
+                    <div class="stat-percentage">90%</div>
+                    <div class="stat-text desktop-only">Reduction in hair fall</div>
+                    <div class="stat-text mobile-only">Better hair volume</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <h2>Patient Testimonials</h2>
+            <p class="subtitle">Accredited and recognized expertise</p>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-card" data-slide="1">
+                    <div class="testimonial-image">
+                        <img src="images/Alopecia-02.webp" alt="Joncy Mehak">
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="play-icon">▶</div>
+                        <h3>Joncy Mehak</h3>
+                        <p>Witnessed results in just 5 months an inspiring journey shared by a satisfied patient with alopecia treatment.</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-slide="1">
+                    <div class="testimonial-image">
+                        <img src="images/Hair-Growth-01.webp" alt="Nikita Chhatriya">
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="play-icon">▶</div>
+                        <h3>Nikita Chhatriya</h3>
+                        <p>Dr Batra's hair treatment was a game changer for my hair loss.</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-slide="2">
+                    <div class="testimonial-image">
+                        <img src="images/hairfall-02.webp" alt="Shailesh Kumar">
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="play-icon">▶</div>
+                        <h3>Shailesh Kumar</h3>
+                        <p>My Hair loss and bald patches diminished in just 6 months with Dr Batra's treatment.</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-slide="2">
+                    <div class="testimonial-image">
+                        <img src="images/Alopecia-01.webp" alt="Tanisha Dhamala">
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="play-icon">▶</div>
+                        <h3>Tanisha Dhamala</h3>
+                        <p>Dr Batra's holistic homeopathy brings remarkable results</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination-dots">
+                <span class="dot active" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="appointment-section">
+        <div class="container">
+            <div class="appointment-card">
+                <h2 class="desktop-heading">Book an Appointment with our <span>Hair Doctors</span></h2>
+                <h2 class="mobile-heading">Consult with hair our <span>doctor</span></h2>
+                <p class="subtitle">Unmatched Expertise & Results</p>
+                <form class="appointment-form">
+                    <input type="text" placeholder="Enter Name">
+                    <input type="tel" placeholder="Enter Mobile Number">
+                    <div class="terms-checkbox">
+                        <input type="checkbox" id="terms">
+                        <label for="terms">I understand and accept the terms and conditions</label>
+                    </div>
+                    <button type="submit" class="book-appointment-btn">BOOK YOUR APPOINTMENT</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="appointment-section-new">
+        <div class="container">
+            <div class="appointment-card-new">
+                <h2 class="desktop-heading-new">Book an Appointment with our <span>Hair Doctors</span></h2>
+                <h2 class="mobile-heading-new">Schedule your appointment</h2>
+                
+                <form class="appointment-form-new">
+                    <div class="input-row">
+                        <select class="city-dropdown" style="flex: 1; min-width: 0; height: 40px; padding: 0 15px; border-radius: 5px; border: 1px solid #ddd; font-family: 'Poppins', sans-serif; font-size: 14px; background-color: white;">
+                            <option value="" disabled selected>Select City</option>
+                            <optgroup label="Top Cities">
+                                <option value="Delhi NCR">Delhi NCR</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Bangalore">Bangalore</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Kolkata">Kolkata</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                            </optgroup>
+                            <optgroup label="Other Cities">
+                                <option value="Agartala">Agartala</option>
+                                <option value="Agra">Agra</option>
+                                <option value="Ahmedabad">Ahmedabad</option>
+                            </optgroup>
+                        </select>
+                        <select id="clinic-dropdown" class="clinic-dropdown" style="flex: 1; min-width: 0; height: 40px; padding: 0 15px; border-radius: 5px; border: 1px solid #ddd; font-family: 'Poppins', sans-serif; font-size: 14px; background-color: white;">
+                            <option value="" disabled selected>Select Clinic</option>
+                        </select>
+                        <input type="date" placeholder="Date">
+                        <input type="time" placeholder="Time">
+                    </div>
+                    <div class="terms-checkbox-new">
+                        <input type="checkbox" id="terms">
+                        <label for="terms">I understand and accept the terms and conditions</label>
+                    </div>
+                    <button type="submit" class="book-now-btn">BOOK YOUR APPOINTMENT</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <section class="keyword-section" id="why-choose-dr-batra">
+        <div class="container">
+            <h2>Why Choose Dr Batra's  <%= h1 %> ?</h2>
+            <p class="subtitle">Features of our clinics</p>
+            <div class="keyword-content">
+                <%= content %>
+            </div>
+        </div>
+    </section>
+
+    <section class="science-section">
+        <div class="container">
+            <h2>How we Treat: Differently, Scientifically & Safety</h2>
+            <p class="subtitle">The Science Behind Our Treatments</p>
+            <div class="treatment-tabs">
+                <div class="tab active" data-tab="works">How our Treatment works</div>
+                <div class="tab" data-tab="approach">Treatment Approach</div>
+            </div>
+
+            <div id="works" class="treatment-content active">
+                <div class="treatment-approach-cards">
+                    <div class="treatment-approach-card" data-slide="1" data-index="0">
+                        <img src="images/01-homeopathy.png" alt="Approach Icon 1" class="approach-icon">
+                        <div class="text-content">
+                            <h4>Microscopic Test</h4>
+                            <p>Our doctors go beyond the surface of your scalp with a microscopic examination to understand the exact root cause of your hair loss</p>
+                        </div>
+                    </div>
+                    <div class="treatment-approach-card" data-slide="1" data-index="1">
+                        <img src="images/03-homeopathy.png" alt="Approach Icon 2" class="approach-icon">
+                        <div class="text-content">
+                            <h4>30 to 40 minutes detailed consultation</h4>
+                            <p>To thoroughly understand your case and reason for hair loss, a detailed consultation will guide us in offering a safe and effective solution</p>
+                        </div>
+                    </div>
+                    <div class="treatment-approach-card" data-slide="2" data-index="2">
+                        <img src="images/03-homeopathy.png" alt="Approach Icon 3" class="approach-icon">
+                        <div class="text-content">
+                            <h4>Measuring your result</h4>
+                            <p>Monthly monitoring of hair regrowth progress, addressing root cause for lasting improvements</p>
+                        </div>
+                    </div>
+                    <div class="treatment-approach-card" data-slide="2" data-index="3">
+                        <img src="images/04-homeopathy.png" alt="Approach Icon 3" class="approach-icon">
+                        <div class="text-content">
+                            <h4>Personalized hair treatment</h4>
+                            <p>After a comprehensive assessment, our doctors will customize a treatment plan combining homeopathy and aesthetics for quicker, visible results tailored to your hair loss stage</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="science-pagination-dots">
+                    <span class="dot active" data-slide="1" data-index="0"></span>
+                    <span class="dot" data-slide="2" data-index="2"></span>
+                </div>
+            </div>
+
+            <div id="approach" class="treatment-content">
+                <p>1) We use a unique dual approach combining homeopathy and advanced aesthetic treatments to deliver visible hair regrowth in just six sessions.</p>
+                <p>2) Homeopathy works from within by treating root causes like hormonal imbalances, stress, and low immunity, promoting natural and long-lasting hair growth.</p>
+                <p>3) Advanced treatments like XOGEN, STM, and GroHair target the scalp and hair follicles, ensuring quick, safe, and side-effect-free results.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="hairtreatment-section">
+        <div class="container">
+            <h2>Types of Hair Treatment We Provide</h2>
+            <p class="subtitle">Personalized Solutions for Every Condition</p>
+            
+            <div class="treatment-toggle">
+                <div class="toggle-btn active">Types of hair fall</div>
+                <div class="toggle-btn">Types of hair Treatment</div>
+            </div>
+            
+            <div class="treatment-grid">
+                <div class="treatment-item" data-page="1">
+                    <img src="images/01-img.png" alt="treatment icon" class="treatment-icon">
+                    <span>Postpartum & Menopausal Hair Loss</span>
+                </div>
+                
+                <div class="treatment-item" data-page="1">
+                    <img src="images/01-img.png" alt="treatment icon" class="treatment-icon">
+                    <span>Stress Induced Hair fall</span>
+                </div>
+                
+                <div class="treatment-item" data-page="1">
+                    <img src="images/01-img.png" alt="treatment icon" class="treatment-icon">
+                    <span>Male & Female Pattern Baldness</span>
+                </div>
+                
+                <div class="treatment-item" data-page="1">
+                    <img src="images/01-img.png" alt="treatment icon" class="treatment-icon">
+                    <span>Stress-induced Hair Fall Treatment</span>
+                </div>
+                
+                <div class="treatment-item" data-page="1">
+                    <img src="images/01-img.png" alt="treatment icon" class="treatment-icon">
+                    <span>Patchy Hair loss</span>
+                </div>
+                
+                <div class="treatment-item" data-page="1">
+                    <img src="images/01-img.png" alt="treatment icon" class="treatment-icon">
+                    <span>Scalp infection hair fall</span>
+                </div>
+                
+                <!-- Hair Treatment Types (data-page="2") -->
+                <div class="treatment-item" data-page="2">
+                    <img src="images/01-img.png" alt="treatment icon" class="treatment-icon">
+                    <span>Hair Growth & Regrowth Treatment</span>
+                </div>
+                
+                <div class="treatment-item" data-page="2">
+                    <img src="images/01-img.png" alt="treatment icon" class="treatment-icon">
+                    <span>Male & Female Pattern Baldness Treatment</span>
+                </div>
+                
+                <div class="treatment-item" data-page="2">
+                    <img src="images/01-img.png" alt="treatment icon" class="treatment-icon">
+                    <span>Postpartum & Menopausal Hair Treatment</span>
+                </div>
+                
+                <div class="treatment-item" data-page="2">
+                    <img src="images/01-img.png" alt="treatment icon" class="treatment-icon">
+                    <span>Stress-induced Hair Fall Treatment</span>
+                </div>
+                
+                <div class="treatment-item" data-page="2">
+                    <img src="images/01-img.png" alt="treatment icon" class="treatment-icon">
+                    <span>Alopecia Areata Hair Treatment</span>
+                </div>
+                
+                <div class="treatment-item" data-page="2">
+                    <img src="images/01-img.png" alt="treatment icon" class="treatment-icon">
+                    <span>General Hair Fall Treatment</span>
+                </div>
+                
+                <div class="treatment-item" data-page="2">
+                    <img src="images/01-img.png" alt="treatment icon" class="treatment-icon">
+                    <span>Thinning Hair Treatment</span>
+                </div>
+                
+                <div class="treatment-item" data-page="2">
+                    <img src="images/01-img.png" alt="treatment icon" class="treatment-icon">
+                    <span>Dandruff Treatment</span>
+                </div>
+                
+                <div class="treatment-item" data-page="2">
+                    <img src="images/01-img.png" alt="treatment icon" class="treatment-icon">
+                    <span>Hereditary Hair Loss Treatment</span>
+                </div>
+                
+            </div>
+            <div class="treatment-pagination-dots">
+                <span class="dot active" data-page="1"></span>
+                <span class="dot" data-page="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="stages-section" id="book-consultation">
+        <div class="container">
+            <h2>Understanding the Stages of Hair Fall</h2>
+            <p class="subtitle">At Dr Batra's®, we personalise treatments based on the severity of hair loss, ensuring maximum regrowth potential.
+            Hair loss progresses in different stages:</p>
+            
+            <div class="stages-grid">
+                <div class="stage-card">
+                    <div class="stage-progress">
+                        <div class="progress-dot"></div>
+                        <div class="progress-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="stage-content">
+                        <h3>Stage 1-2</h3>
+                        <p>Mild thinning, slight hairline recession</p>
+                    </div>
+                </div>
+                
+                <div class="stage-card">
+                    <div class="stage-progress">
+                        <div class="progress-dot"></div>
+                        <div class="progress-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="stage-content">
+                        <h3>Stage 3-4</h3>
+                        <p>Visible bald patches, widening parting</p>
+                    </div>
+                </div>
+                
+                <div class="stage-card">
+                    <div class="stage-progress">
+                        <div class="progress-dot"></div>
+                        <div class="progress-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                            <img src="images/stages.png" alt="End Circle" class="stage-end-circle">
+                        </div>
+                    </div>
+                    <div class="stage-content">
+                        <h3>Stage 5-7</h3>
+                        <p>Extensive balding, almost no regrowth</p>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#" class="consultation-btn">Book your Consultation Now</a>
+        </div>
+    </section>
+
+    <section class="doctor-speaks-section" id="doctors-speak">
+        <div class="container">
+            <h2>Doctors speak</h2>
+            <p class="subtitle">Accredited and recognized expertise</p>
+            
+            <div class="doctor-speaks-container">
+                <div class="doctor-card" data-slide="1">
+                    <div class="doctor-image">
+                        <img src="images/doctor-speaks.webp" alt="Dr. Akshay">
+                    </div>
+                    <div class="doctor-content">
+                        <div class="play-icon">▶</div>
+                        <h3>Dr. Akshay</h3>
+                        <p>Transform Your Hair Health: Dr Batra's Personalized Solutions for Hair Fall</p>
+                    </div>
+                </div>
+                
+                <div class="doctor-card" data-slide="1">
+                    <div class="doctor-image">
+                        <img src="images/doctor-speaks.webp" alt="Dr. Akshay">
+                    </div>
+                    <div class="doctor-content">
+                        <div class="play-icon">▶</div>
+                        <h3>Dr. Akshay</h3>
+                        <p>Transform Your Hair Health: Dr Batra's Personalized Solutions for Hair Fall</p>
+                    </div>
+                </div>
+                
+                <div class="doctor-card" data-slide="2">
+                    <div class="doctor-image">
+                        <img src="images/doctor-speaks.webp" alt="Dr. Akshay">
+                    </div>
+                    <div class="doctor-content">
+                        <div class="play-icon">▶</div>
+                        <h3>Dr. Akshay</h3>
+                        <p>Transform Your Hair Health: Dr Batra's Personalized Solutions for Hair Fall</p>
+                    </div>
+                </div>
+            </div>
+            <div class="doctor-pagination-dots">
+                <span class="dot active" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="google-reviews-section">
+        <div class="container">
+            <h2>Live Google Reviews</h2>
+            <p class="subtitle">Dynamic ratings from real patients</p>
+            
+            <div class="embedsocial-hashtag" style="margin-top: -50px;  margin-left: -10px; margin-right:-10px;" data-ref="d9aacf85238a85439dd962650a1b9669d71d52fa"></div> 
+            <script> (function(d, s, id) { var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js); }(document, "script", "EmbedSocialHashtagScript")); </script>
+            </div>
+            
+            <div class="reviews-pagination-dots">
+                <span class="dot active" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </div>
+    </section>
+    
+    <section class="clinic-near-section">
+        <div class="container">
+            <h2>Dr Batra's Clinic Near Me</h2>
+            <p class="subtitle">Easy Access to Our Clinic</p>
+            
+            <div class="search-location">
+                <input type="text" placeholder="Search by city" value="Mumbai">
+                <i class="fas fa-search"></i>
+            </div>
+            
+            <div class="clinics-container">
+                <div class="clinics-navigation">
+                    <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <!-- Clinic cards will be dynamically loaded here -->
+            </div>
+            
+            <div class="clinics-pagination-dots">
+                <!-- Pagination dots will be dynamically generated -->
+            </div>
+        </div>
+    </section> 
+
+    <section class="chat-section">
+        <div class="chat-container">
+            <div class="chat-header">
+                <h3>Chat with Dr. Bella</h3>
+               
+            </div>
+            <div class="chat-messages">
+                <div class="message bot-message">
+                    <div class="bot-avatar"></div> 
+                    <div class="message-bubble">
+                        <div class="message-meta">
+                             <span class="sender-name">Dr, Bella</span> • <span class="chat-time">8:20 PM</span> <!-- Moved timestamp here -->
+                        </div>
+                        <div class="message-content-wrapper"> 
+                           <p>Hi! I'm Dr. Bella your assistant from Dr Batra's please select your Gender</p>
+                           <div class="gender-options">
+                               <button class="gender-btn">Male</button>
+                               <button class="gender-btn">Female</button>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Send a message...">
+                <button class="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-copyright">
+                ©Dr Batra's - All rights reserved
+            </div>
+          
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="video-container">
+                <iframe id="videoFrame" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+// Types of HairTreatment section
+document.addEventListener('DOMContentLoaded', function() {
+        let activeTab = 1; 
+        let currentPage = 1; 
+        const itemsPerPage = 3; 
+        
+        document.querySelectorAll('.treatment-item').forEach(item => {
+            item.style.display = 'none';
+        });
+        
+        if (window.innerWidth <= 768) {
+            showItemsForPage(1, 1);
+            createPaginationDots();
+        } else {
+            document.querySelectorAll('.treatment-item[data-page="1"]').forEach(item => {
+                item.style.display = 'flex';
+            });
+        }
+        
+        function createPaginationDots() {
+            const dotContainer = document.querySelector('.treatment-pagination-dots');
+            dotContainer.innerHTML = '';
+            
+            const tab1Items = document.querySelectorAll('.treatment-item[data-page="1"]').length;
+            const tab2Items = document.querySelectorAll('.treatment-item[data-page="2"]').length;
+            
+            const tab1Pages = Math.ceil(tab1Items / itemsPerPage);
+            const tab2Pages = Math.ceil(tab2Items / itemsPerPage);
+            
+            const pages = activeTab === 1 ? tab1Pages : tab2Pages;
+            
+            for (let i = 1; i <= pages; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'dot' + (i === currentPage ? ' active' : '');
+                dot.setAttribute('data-page', activeTab);
+                dot.setAttribute('data-index', i);
+                
+                dot.addEventListener('click', function() {
+                    currentPage = parseInt(this.getAttribute('data-index'));
+                    showItemsForPage(activeTab, currentPage);
+                    
+                    document.querySelectorAll('.treatment-pagination-dots .dot').forEach(d => {
+                        d.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+                
+                dotContainer.appendChild(dot);
+            }
+        }
+        
+        function showItemsForPage(tabNumber, pageNumber) {
+            document.querySelectorAll('.treatment-item').forEach(item => {
+                item.style.display = 'none';
+            });
+            
+            if (window.innerWidth <= 768) {
+                const startIndex = (pageNumber - 1) * itemsPerPage;
+                const endIndex = startIndex + itemsPerPage;
+                
+                const items = Array.from(document.querySelectorAll(`.treatment-item[data-page="${tabNumber}"]`));
+                
+                for (let i = startIndex; i < Math.min(endIndex, items.length); i++) {
+                    items[i].style.display = 'flex';
+                }
+            } else {
+                document.querySelectorAll(`.treatment-item[data-page="${tabNumber}"]`).forEach(item => {
+                    item.style.display = 'flex';
+                });
+            }
+        }
+        
+        const toggleBtns = document.querySelectorAll('.treatment-toggle .toggle-btn');
+        
+        toggleBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                toggleBtns.forEach(b => b.classList.remove('active'));
+                
+                this.classList.add('active');
+                
+                activeTab = this.textContent.includes('Treatment') ? 2 : 1;
+                currentPage = 1;
+                
+                if (window.innerWidth <= 768) {
+                    showItemsForPage(activeTab, currentPage);
+                    createPaginationDots();
+                } else {
+                    showItemsForPage(activeTab, currentPage);
+                }
+            });
+        });
+        
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        const treatmentGrid = document.querySelector('.treatment-grid');
+        
+        treatmentGrid.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+        
+        treatmentGrid.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+        
+        function handleSwipe() {
+            if (window.innerWidth <= 768) {
+                const items = document.querySelectorAll(`.treatment-item[data-page="${activeTab}"]`);
+                const totalPages = Math.ceil(items.length / itemsPerPage);
+                
+                if (touchEndX < touchStartX - 50) {
+                    if (currentPage < totalPages) {
+                        currentPage++;
+                        showItemsForPage(activeTab, currentPage);
+                        
+                        document.querySelectorAll('.treatment-pagination-dots .dot').forEach(dot => {
+                            dot.classList.remove('active');
+                        });
+                        document.querySelector(`.treatment-pagination-dots .dot[data-index="${currentPage}"]`).classList.add('active');
+                    }
+                }
+                
+                if (touchEndX > touchStartX + 50) {
+                    if (currentPage > 1) {
+                        currentPage--;
+                        showItemsForPage(activeTab, currentPage);
+                        
+                        document.querySelectorAll('.treatment-pagination-dots .dot').forEach(dot => {
+                            dot.classList.remove('active');
+                        });
+                        document.querySelector(`.treatment-pagination-dots .dot[data-index="${currentPage}"]`).classList.add('active');
+                    }
+                }
+            }
+        }
+        
+        window.addEventListener('resize', function() {
+            if (window.innerWidth <= 768) {
+                showItemsForPage(activeTab, currentPage);
+                createPaginationDots();
+            } else {
+                showItemsForPage(activeTab, currentPage);
+            }
+        });
+    });
+
+   
+
+    </script>
+
+</body>
+</html>
