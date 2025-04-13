@@ -88,7 +88,7 @@ header .container {
   margin-right: 5px;
 }
 
-/* Hamburger Menu and Mobile Navigation */
+/* Hamburger Menu */
 .hamburger {
   display: none;
   width: 35px;
@@ -126,7 +126,7 @@ header .container {
   font-size: 12px;
   line-height: 100%;
   letter-spacing: 0%;
-  border-bottom: 1px solid #eee;
+ 
 }
 
 .mobile-nav a:hover {
@@ -981,6 +981,23 @@ header .container {
     font-size: 12px;
     line-height: 1.3;
     margin-top: 6px;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 359px) {
+  .doctor-card {
+    flex: 0 0 calc(100% - 30px);
+    width: calc(100% - 30px);
+    height: 260px;
+  }
+
+  .doctor-image {
+    height: 260px;
+  }
+
+  .doctor-content {
+    padding: 10px;
   }
 }
 
@@ -2442,7 +2459,7 @@ header .container {
     scroll-behavior: smooth;
     gap: 15px;
     padding-bottom: 40px;
-    margin: 0 -15px;
+  
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -2518,19 +2535,60 @@ header .container {
 /* Small mobile styles */
 @media (max-width: 370px) {
   .doctor-card {
-    flex: 0 0 calc(100% - 30px);
-    width: calc(100% - 30px);
-    height: 260px;
+    flex: 0 0 calc(50% - 10px);
+    width: calc(50% - 10px);
+    height: 280px;
+   
   }
 
   .doctor-image {
-    height: 260px;
+    height: 280px;
+    width: 100%;
+  }
+
+  .doctor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .doctor-content {
     padding: 10px;
+    background: linear-gradient(
+      to top,
+      rgba(15, 71, 122, 1),
+      rgba(15, 71, 122, 0.8),
+      transparent
+    );
+  }
+
+  .doctor-content .play-icon,
+  .doctor-content .doctor-content .play-icon {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    margin-bottom: 0;
+  }
+
+  .doctor-content h3,
+  .doctor-content .doctor-content h3 {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+
+  .doctor-content p,
+  .doctor-content .doctor-content p {
+    font-size: 12px;
+    line-height: 1.3;
+    margin-top: 6px;
   }
 }
+
+
 
 /* Google Reviews Section */
 .google-reviews-section {

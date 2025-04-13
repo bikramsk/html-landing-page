@@ -1,5 +1,48 @@
 document.addEventListener("DOMContentLoaded", function () {
  
+  const mobileNav = document.getElementById('mobileNav');
+  const hamburger = document.querySelector('.hamburger');
+  
+  // Toggle mobile menu
+  if (hamburger) {
+    hamburger.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      if (mobileNav) {
+        mobileNav.classList.toggle('show');
+      }
+    });
+  }
+  
+  
+  const mobileNavLinks = document.querySelectorAll('#mobileNav a');
+  if (mobileNavLinks && mobileNavLinks.length > 0) {
+    mobileNavLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        if (mobileNav) {
+          mobileNav.classList.remove('show');
+        }
+      });
+    });
+  }
+  
+  // Close when scrolling
+  window.addEventListener('scroll', function() {
+    if (mobileNav && mobileNav.classList.contains('show')) {
+      mobileNav.classList.remove('show');
+    }
+  }, { passive: true });
+  
+  // Close when clicking 
+  document.addEventListener('click', function(event) {
+    if (mobileNav && mobileNav.classList.contains('show') && 
+        hamburger && !hamburger.contains(event.target) && 
+        !mobileNav.contains(event.target)) {
+      mobileNav.classList.remove('show');
+    }
+  });
+  
   //consultation-btn 
   document.querySelectorAll(".consultation-btn").forEach(button => {
     button.addEventListener("click", function(e) {
@@ -10,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (appointmentSection) {
         appointmentSection.scrollIntoView({ behavior: "smooth" });
 
-        // Highlight the appointment section 
+       
         appointmentSection.classList.add("highlight-section");
         setTimeout(() => {
           appointmentSection.classList.remove("highlight-section");
@@ -2051,13 +2094,15 @@ document.addEventListener("DOMContentLoaded", function () {
       item.style.display = 'none';
     });
     
-    // Show all items for the selected tab regardless of page number
+   
     document.querySelectorAll(`.treatment-item[data-page="${tabNumber}"]`).forEach(item => {
       item.style.display = 'flex';
     });
   }
 
 
+  const toggleBtns = document.querySelectorAll('.treatment-toggle-btn');
+  
   if (toggleBtns && toggleBtns.length > 0) {
     toggleBtns.forEach(btn => {
       btn.addEventListener('click', function() {
@@ -2076,7 +2121,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize treatment items display
   document.addEventListener("DOMContentLoaded", function() {
-    // Show all treatment items for the initial active tab (data-page="1")
+    
     document.querySelectorAll('.treatment-item[data-page="1"]').forEach(item => {
       item.style.display = 'flex';
     });
@@ -2088,7 +2133,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // For treatment approach cards, show only 2 on mobile and all on desktop
     if (window.innerWidth <= 768) {
-      // On mobile, show only the first 2 cards
+      // On mobile
       document.querySelectorAll('.treatment-approach-card').forEach((card, index) => {
         if (index < 2) {
           card.style.display = 'flex';
@@ -2123,4 +2168,173 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('mobileNav').classList.remove('show');
         });
     });
+});
+
+
+// Types of HairTreatment section
+document.addEventListener('DOMContentLoaded', function() {
+  let activeTab = 1; 
+  let currentPage = 1; 
+  const itemsPerPage = 3; 
+  
+  document.querySelectorAll('.treatment-item').forEach(item => {
+    item.style.display = 'none';
+  });
+  
+  if (window.innerWidth <= 768) {
+    showItemsForPage(1, 1);
+    createPaginationDots();
+  } else {
+    document.querySelectorAll('.treatment-item[data-page="1"]').forEach(item => {
+      item.style.display = 'flex';
+    });
+  }
+  
+  function createPaginationDots() {
+    const dotContainer = document.querySelector('.treatment-pagination-dots');
+    if (!dotContainer) return;
+    
+    dotContainer.innerHTML = '';
+    
+    const tab1Items = document.querySelectorAll('.treatment-item[data-page="1"]').length;
+    const tab2Items = document.querySelectorAll('.treatment-item[data-page="2"]').length;
+    
+    const tab1Pages = Math.ceil(tab1Items / itemsPerPage);
+    const tab2Pages = Math.ceil(tab2Items / itemsPerPage);
+    
+    const pages = activeTab === 1 ? tab1Pages : tab2Pages;
+    
+    for (let i = 1; i <= pages; i++) {
+      const dot = document.createElement('span');
+      dot.className = 'dot' + (i === currentPage ? ' active' : '');
+      dot.setAttribute('data-page', activeTab);
+      dot.setAttribute('data-index', i);
+      
+      dot.addEventListener('click', function() {
+        currentPage = parseInt(this.getAttribute('data-index'));
+        showItemsForPage(activeTab, currentPage);
+        
+        document.querySelectorAll('.treatment-pagination-dots .dot').forEach(d => {
+          d.classList.remove('active');
+        });
+        this.classList.add('active');
+      });
+      
+      dotContainer.appendChild(dot);
+    }
+  }
+  
+  function showItemsForPage(tabNumber, pageNumber) {
+    document.querySelectorAll('.treatment-item').forEach(item => {
+      item.style.display = 'none';
+    });
+    
+    if (window.innerWidth <= 768) {
+      const startIndex = (pageNumber - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      
+      const items = Array.from(document.querySelectorAll(`.treatment-item[data-page="${tabNumber}"]`));
+      
+      for (let i = startIndex; i < Math.min(endIndex, items.length); i++) {
+        items[i].style.display = 'flex';
+      }
+    } else {
+      document.querySelectorAll(`.treatment-item[data-page="${tabNumber}"]`).forEach(item => {
+        item.style.display = 'flex';
+      });
+    }
+  }
+  
+  const treatmentToggleBtns = document.querySelectorAll('.treatment-toggle .toggle-btn');
+  
+  if (treatmentToggleBtns && treatmentToggleBtns.length > 0) {
+    treatmentToggleBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        treatmentToggleBtns.forEach(b => b.classList.remove('active'));
+        
+        this.classList.add('active');
+        
+        activeTab = this.textContent.includes('Treatment') ? 2 : 1;
+        currentPage = 1;
+        
+        if (window.innerWidth <= 768) {
+          showItemsForPage(activeTab, currentPage);
+          createPaginationDots();
+        } else {
+          showItemsForPage(activeTab, currentPage);
+        }
+      });
+    });
+  }
+  
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
+  const treatmentGrid = document.querySelector('.treatment-grid');
+  
+  if (treatmentGrid) {
+    treatmentGrid.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, false);
+    
+    treatmentGrid.addEventListener('touchend', function(e) {
+      touchEndX = e.changedTouches[0].screenX;
+      handleTreatmentSwipe();
+    }, false);
+  }
+  
+  function handleTreatmentSwipe() {
+    if (window.innerWidth <= 768) {
+      const items = document.querySelectorAll(`.treatment-item[data-page="${activeTab}"]`);
+      const totalPages = Math.ceil(items.length / itemsPerPage);
+      
+      if (touchEndX < touchStartX - 50) {
+        if (currentPage < totalPages) {
+          currentPage++;
+          showItemsForPage(activeTab, currentPage);
+          
+          const dots = document.querySelectorAll('.treatment-pagination-dots .dot');
+          if (dots && dots.length > 0) {
+            dots.forEach(dot => {
+              dot.classList.remove('active');
+            });
+            
+            const activeDot = document.querySelector(`.treatment-pagination-dots .dot[data-index="${currentPage}"]`);
+            if (activeDot) {
+              activeDot.classList.add('active');
+            }
+          }
+        }
+      }
+      
+      if (touchEndX > touchStartX + 50) {
+        if (currentPage > 1) {
+          currentPage--;
+          showItemsForPage(activeTab, currentPage);
+          
+          const dots = document.querySelectorAll('.treatment-pagination-dots .dot');
+          if (dots && dots.length > 0) {
+            dots.forEach(dot => {
+              dot.classList.remove('active');
+            });
+            
+            const activeDot = document.querySelector(`.treatment-pagination-dots .dot[data-index="${currentPage}"]`);
+            if (activeDot) {
+              activeDot.classList.add('active');
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  // Add resize handler for treatment items
+  window.addEventListener('resize', function() {
+    if (window.innerWidth <= 768) {
+      showItemsForPage(activeTab, currentPage);
+      createPaginationDots();
+    } else {
+      showItemsForPage(activeTab, currentPage);
+    }
+  });
 });
